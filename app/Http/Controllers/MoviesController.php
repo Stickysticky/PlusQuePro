@@ -9,17 +9,17 @@ class MoviesController extends Controller
 {
     /**
      * Invoke the controller method.
-     * 
+     *
      * @return \Illuminate\Contracts\View\View
      */
-    public function __invoke()
+    public function __invoke(): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
     {
         $trendingMovies = TrendingMovie::where('period', 'day')->get();
         $dayMovies = [];
 
         foreach ($trendingMovies as $trendingMovie) {
             $movie = Movie::find($trendingMovie->id_movie);
-            if ($movie instanceOf Movie) {
+            if ($movie instanceof Movie) {
                 $dayMovies[] = $movie;
             }
         }
@@ -29,11 +29,11 @@ class MoviesController extends Controller
 
         foreach ($trendingMovies as $trendingMovie) {
             $movie = Movie::find($trendingMovie->id_movie);
-            if ($movie instanceOf Movie) {
+            if ($movie instanceof Movie) {
                 $weekMovies[] = $movie;
             }
         }
-        
+
         return view('movies.movies', compact('dayMovies', 'weekMovies'));
 
     }

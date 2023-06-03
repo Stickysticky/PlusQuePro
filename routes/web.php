@@ -30,5 +30,13 @@ Route::middleware([
 
     Route::get('/movies', MoviesController::class)->name('movies');
 
-    Route::get('/movies/{movie}', MovieController::class)->name('movie');
+    Route::get('/movies/detail/{movie}', MovieController::class)->name('movie');
 });
+
+Route::post('/movies', [PostMovieController::class])->name('post_movie');
+
+Route::patch('/movies/{movie}', [PatchMovieController::class])->name('patch_movie');
+
+Route::get('/movies/{movie}', [GetMovieController::class])->name('get_movie');
+
+Route::delete('/movies/{movie}', [DeleteMovieController::class])->name('delete_movie');

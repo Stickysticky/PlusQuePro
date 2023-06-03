@@ -10,7 +10,7 @@ class TrendingMovie extends Model
     protected $table = 'trending_movie';
     protected $fillable = ['id_movie', 'period', 'rank'];
 
-    public static function boot()
+    public static function boot(): void
     {
         parent::boot();
 
@@ -19,7 +19,7 @@ class TrendingMovie extends Model
         });
     }
 
-    public function validate()
+    public function validate(): void
     {
         $rules = [
             'period' => Rule::in(['week', 'day']),
@@ -32,7 +32,7 @@ class TrendingMovie extends Model
         }
     }
 
-    public function movie()
+    public function movie(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Movie::class);
     }
