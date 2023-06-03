@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,6 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/movies', MoviesController::class)->name('movies');
+
+    Route::get('/movies/{movie}', MovieController::class)->name('movie');
 });

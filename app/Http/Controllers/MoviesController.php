@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Movie;
 use App\Models\TrendingMovie;
 
@@ -10,11 +9,10 @@ class MoviesController extends Controller
 {
     /**
      * Invoke the controller method.
-     *
-     * @param  Request  $request
-     * @return mixed
+     * 
+     * @return \Illuminate\Contracts\View\View
      */
-    public function __invoke(Request $request)
+    public function __invoke()
     {
         $trendingMovies = TrendingMovie::where('period', 'day')->get();
         $dayMovies = [];
