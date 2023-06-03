@@ -10,7 +10,7 @@ return new class () extends Migration {
         Schema::create('trending_movie', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_movie');
-            $table->enum('period', ['week', 'month']);
+            $table->enum('period', ['week', 'day']);
             $table->integer('rank');
             $table->timestamps();
 

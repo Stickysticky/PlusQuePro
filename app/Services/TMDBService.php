@@ -28,4 +28,16 @@ class TMDBService
 
         return json_decode($response->getBody(), true);
     }
+
+    public function getTrendingDayMovies()
+    {
+        $response = $this->client->get('trending/movie/day?language=fr-FR', [
+            'headers' => [
+                'Authorization' => $this->apiKey,
+                'accept' => 'application/json',
+              ],
+        ]);
+
+        return json_decode($response->getBody(), true);
+    }
 }

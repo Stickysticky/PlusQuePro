@@ -22,7 +22,7 @@ class TrendingMovie extends Model
     public function validate()
     {
         $rules = [
-            'period' => Rule::in(['week', 'month']),
+            'period' => Rule::in(['week', 'day']),
         ];
 
         $validator = \Validator::make($this->attributes, $rules);
