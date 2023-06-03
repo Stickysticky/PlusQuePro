@@ -33,7 +33,7 @@ class MoviesController extends Controller
                 $weekMovies[] = $movie;
             }
         }
-
+        
         return view('movies.movies', compact('dayMovies', 'weekMovies'));
 
     }
