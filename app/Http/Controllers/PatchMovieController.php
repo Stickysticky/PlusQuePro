@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PatchMovieController extends Controller
 {
@@ -15,14 +16,23 @@ class PatchMovieController extends Controller
      */
     public function __invoke(Request $request, Movie $movie): \Illuminate\Http\JsonResponse
     {
-        $validatedData = $request->validate([
+        $movieData = $request->json()->all();
+
+        $validator = Validator::make($movieData, [
             'title' => 'string',
             'overview' => 'string',
             'release_date' => 'date',
             'poster_path' => 'nullable|string',
         ]);
 
-        $movie->fill($validatedData);
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Validation error',
+                'errors' => $validator->errors(),
+            ], 400);
+        }
+
+        $movie->update($movieData);
         $movie->save();
 
         return response()->json($movie);
