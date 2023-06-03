@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Movie;
+use Illuminate\Support\Facades\Validator;
 
 class PostMovieController extends Controller
 {
@@ -15,7 +16,9 @@ class PostMovieController extends Controller
      */
     public function __invoke(Request $request): \Illuminate\Http\JsonResponse
     {
-        $validatedData = $request->validate([
+        $movieData = $request->json()->all();
+
+        $validator = Validator::make($movieData, [
             'id_tmdb' => 'required|int',
             'title' => 'required|string',
             'overview' => 'required|string',
@@ -23,11 +26,15 @@ class PostMovieController extends Controller
             'poster_path' => 'nullable|string',
         ]);
 
-        $movie = Movie::create($validatedData);
+        if ($validator->fails()) {
+            return response()->json([
+                'message' => 'Validation error',
+                'errors' => $validator->errors(),
+            ], 400);
+        }
 
-        return response()->json([
-            'message' => 'Movie created successfully',
-            'data' => $movie,
-        ], 201);
+        $movie = Movie::create($movieData);
+
+        return response()->json($movie);
     }
 }

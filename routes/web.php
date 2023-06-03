@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\GetMovieController;
+use App\Http\Controllers\DeleteMovieController;
+use App\Http\Controllers\PatchMovieController;
+use App\Http\Controllers\PostMovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,10 +37,10 @@ Route::middleware([
     Route::get('/movies/detail/{movie}', MovieController::class)->name('movie');
 });
 
-Route::post('/movies', [PostMovieController::class])->name('post_movie');
+Route::post('/movies', PostMovieController::class)->name('post_movie');
 
-Route::patch('/movies/{movie}', [PatchMovieController::class])->name('patch_movie');
+Route::patch('/movies/{movie}', PatchMovieController::class)->name('patch_movie');
 
-Route::get('/movies/{movie}', [GetMovieController::class])->name('get_movie');
+Route::get('/movies/{movie}', GetMovieController::class)->name('get_movie');
 
-Route::delete('/movies/{movie}', [DeleteMovieController::class])->name('delete_movie');
+Route::delete('/movies/{movie}', DeleteMovieController::class)->name('delete_movie');
