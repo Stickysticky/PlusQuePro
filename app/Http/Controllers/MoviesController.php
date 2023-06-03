@@ -16,7 +16,7 @@ class MoviesController extends Controller
      */
     public function __invoke(Request $request, TMDBService $tmdbService)
     {
-        $popularMovies = $tmdbService->getPopularMovies();
+        $popularMovies = $tmdbService->getTrendingWeekMovies()();
         return view('movies.movies');
     }
 }

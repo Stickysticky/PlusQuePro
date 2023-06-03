@@ -17,7 +17,7 @@ class TMDBService
         ]);
     }
 
-    public function getPopularMovies()
+    public function getTrendingWeekMovies()
     {
         $response = $this->client->get('trending/movie/week?language=fr-FR', [
             'headers' => [
