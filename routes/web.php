@@ -20,7 +20,7 @@ use App\Http\Controllers\PostMovieController;
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('/register');
 });
 
 Route::middleware([
