@@ -15,6 +15,7 @@ Pour utiliser l'application, il faudra se rendre sur http://localhost avec un na
 Une fois le compte créé ou après une connexion si le compte a déjà été créé, vous pouvez voir les films tendances. Les données sont mises à jour une fois par jour mais il est possible de forcer la mise à jour via les commandes suivantes:
 
 ./vendor/bin/sail artisan app:store-trending-week-movies
+
 ./vendor/bin/sail artisan app:store-trending-day-movies
 
 ![image](https://github.com/Stickysticky/PlusQuePro/assets/23642565/12767358-971c-4f85-af2d-fe2e676909b6)
