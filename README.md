@@ -1,6 +1,6 @@
 ## Lancement
 
-Il est recommandé d'utiliser un environnement Ubuntu (ou au moins un terminal Ubuntu sur Windows). Pour utiliser l'application, veuillez lancer le script launch.sh à la racine du projet.
+Il est recommandé d'utiliser un environnement Ubuntu (ou au moins un terminal Ubuntu sur Windows). Pour utiliser l'application, veuillez lancer le script launch.sh à la racine du projet. Docker est nécessaire.
 
 ![image](https://github.com/Stickysticky/PlusQuePro/assets/23642565/9b2ce4a0-3c7e-4387-b777-dfa74f09b052)
 
