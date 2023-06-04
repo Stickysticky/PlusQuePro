@@ -16,6 +16,6 @@ class DeleteMovieController extends Controller
     {
         $movie->delete();
 
-        return response()->json();
+        return response()->json([], 204);
     }
 }

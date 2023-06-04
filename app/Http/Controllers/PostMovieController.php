@@ -35,6 +35,6 @@ class PostMovieController extends Controller
 
         $movie = Movie::create($movieData);
 
-        return response()->json($movie);
+        return response()->json($movie, 201);
     }
 }
