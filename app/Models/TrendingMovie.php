@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
 
 class TrendingMovie extends Model
 {
@@ -25,7 +26,7 @@ class TrendingMovie extends Model
             'period' => Rule::in(['week', 'day']),
         ];
 
-        $validator = \Validator::make($this->attributes, $rules);
+        $validator = Validator::make($this->attributes, $rules);
 
         if ($validator->fails()) {
             throw new \Exception($validator->errors()->first());

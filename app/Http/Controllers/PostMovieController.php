@@ -11,7 +11,7 @@ class PostMovieController extends Controller
     /**
      * Create a movie
      *
-     * @param  Movie  $movie
+     * @param  Request $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function __invoke(Request $request): \Illuminate\Http\JsonResponse

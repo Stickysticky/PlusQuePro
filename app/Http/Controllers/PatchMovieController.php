@@ -11,6 +11,7 @@ class PatchMovieController extends Controller
     /**
      * Update a movie.
      *
+     * @param  Request $request
      * @param  Movie  $movie
      * @return \Illuminate\Http\JsonResponse
      */

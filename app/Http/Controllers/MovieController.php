@@ -10,7 +10,7 @@ class MovieController extends Controller
      * Show the details of a movie.
      *
      * @param  Movie  $movie
-     * @return \Illuminate\Contracts\View\View
+     * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
     public function __invoke(Movie $movie): \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
     {
