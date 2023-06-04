@@ -1,66 +1,40 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Lancement
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Il est recommandé d'utiliser un environnement Ubuntu (ou au moins un terminal Ubuntu sur Windows). Pour utiliser l'application, veuillez lancer le script launch.sh à la racine du projet.
 
-## About Laravel
+![image](https://github.com/Stickysticky/PlusQuePro/assets/23642565/9b2ce4a0-3c7e-4387-b777-dfa74f09b052)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+En cas de problème lié au données, le fichier db.sql est une sauvegarde de la base de données.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Utilisation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Pour utiliser l'application, il faudra se rendre sur http://localhost avec un navigateur avec une vérification CORS désactivée.
 
-## Learning Laravel
+![image](https://github.com/Stickysticky/PlusQuePro/assets/23642565/53a79670-9bab-4e16-b32a-f53a8dbce1b4)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Une fois le compte créé ou après une connexion si le compte a déjà été créé, vous pouvez voir les films tendances. Les données sont mises à jour une fois par jour mais il est possible de forcer la mise à jour via les commandes suivantes:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+./vendor/bin/sail artisan app:store-trending-week-movies
+./vendor/bin/sail artisan app:store-trending-day-movies
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![image](https://github.com/Stickysticky/PlusQuePro/assets/23642565/12767358-971c-4f85-af2d-fe2e676909b6)
 
-## Laravel Sponsors
+Pour voir le détail d'un film, il faut cliquer sur celui-ci:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![image](https://github.com/Stickysticky/PlusQuePro/assets/23642565/b31dd61e-3976-4d95-a352-d7bf0ec0fb33)
 
-### Premium Partners
+## CRUD API
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Il est possible de récupérer, ajouter, supprimer et modifier les films de la base de données via les routes dédiées. Pour les routes POST, DELETE et PATCH, il faudra cependant ajouter le token CSRF (X-CSRF-TOKEN) via le header.
 
-## Contributing
+![image](https://github.com/Stickysticky/PlusQuePro/assets/23642565/b1c3f7ec-7678-41a9-9ff2-19ab40143f84)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+![image](https://github.com/Stickysticky/PlusQuePro/assets/23642565/5bcf5378-d509-4288-b4ec-a4ea90911a70)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+![image](https://github.com/Stickysticky/PlusQuePro/assets/23642565/69a13c03-1820-4494-ab44-9f1499c221ae)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+![image](https://github.com/Stickysticky/PlusQuePro/assets/23642565/890127c1-1697-4c22-8775-1c02e73b0f2d)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
