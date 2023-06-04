@@ -23,6 +23,8 @@ Pour voir le détail d'un film, il faut cliquer sur celui-ci:
 
 ![image](https://github.com/Stickysticky/PlusQuePro/assets/23642565/b31dd61e-3976-4d95-a352-d7bf0ec0fb33)
 
+La base de données est visible depuis http://localhost:8081/ (id: root, password: password)
+
 ## CRUD API
 
 Il est possible de récupérer, ajouter, supprimer et modifier les films de la base de données via les routes dédiées. Pour les routes POST, DELETE et PATCH, il faudra cependant ajouter le token CSRF (X-CSRF-TOKEN) via le header.
